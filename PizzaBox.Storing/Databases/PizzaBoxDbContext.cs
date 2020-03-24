@@ -95,6 +95,7 @@ namespace PizzaBox.Storing.Databases
             new Topping() { ToppingType = toppingtype.Meat, Name = "Pepperoni", Price = 1.00M },
             new Topping() { ToppingType = toppingtype.Meat, Name = "Ham", Price = 1.50M },
             new Topping() { ToppingType = toppingtype.Meat, Name = "Beef", Price = 1.50M },
+            new Topping() { ToppingType = toppingtype.Meat, Name = "Olive", Price = 1.50M },
          });
 
          builder.Entity<User>().HasData(new User[]

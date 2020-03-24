@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using PizzaBox.Client.Models;
 using PizzaBox.Client.Singletons;
@@ -8,6 +9,7 @@ namespace PizzaBox.Client.Controllers
 {
    public class UserController : Controller
    {
+      //public List<PizzaViewModel> orderlist; 
       private PizzeriaSingleton _ps = PizzeriaSingleton.Instance;
       private long OrderId = 637204345527094017;
 
@@ -23,7 +25,8 @@ namespace PizzaBox.Client.Controllers
          if(ModelState.IsValid)
          {
             _ps.CreatePizza(pizzaViewModel);
-            return RedirectToAction("Order");
+            //orderlist.Add(pizzaViewModel);
+            return RedirectToAction("Order", pizzaViewModel);
          }
 
          return View("OrderPizza", pizzaViewModel);
@@ -35,5 +38,12 @@ namespace PizzaBox.Client.Controllers
          Order order = new Order();
          return View();
       }
+
+      public IActionResult Order(PizzaViewModel pizzaViewModel)
+      {
+        return View(pizzaViewModel);
+      }
+
+
    }
 }

@@ -1,4 +1,6 @@
 @model PizzaBox.Client.Models.PizzaViewModel
-
+<p>Name: @Model.Name</p>
 <p>Crust: @Model.CrustId</p>
 <p>Size: @Model.SizeId</p>
+
+<a asp-controller="user" asp-action="OrderPizza">Add Another Pizza</a>

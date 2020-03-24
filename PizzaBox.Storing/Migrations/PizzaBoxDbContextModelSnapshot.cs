@@ -37,19 +37,19 @@ namespace PizzaBox.Storing.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 637205848995357348L,
+                            Id = 637205961571563406L,
                             Name = "Stuffed Crust",
                             Price = 3.00m
                         },
                         new
                         {
-                            Id = 637205848995394045L,
+                            Id = 637205961571581564L,
                             Name = "Hand Tossed",
                             Price = 1.00m
                         },
                         new
                         {
-                            Id = 637205848995394157L,
+                            Id = 637205961571581638L,
                             Name = "Deep Dish",
                             Price = 2.00m
                         });
@@ -139,19 +139,19 @@ namespace PizzaBox.Storing.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 637205848995423416L,
+                            Id = 637205961571592940L,
                             Name = "Large",
                             Price = 17.95m
                         },
                         new
                         {
-                            Id = 637205848995424190L,
+                            Id = 637205961571593336L,
                             Name = "Regular",
                             Price = 12.95m
                         },
                         new
                         {
-                            Id = 637205848995424240L,
+                            Id = 637205961571593357L,
                             Name = "Small",
                             Price = 9.95m
                         });
@@ -183,7 +183,7 @@ namespace PizzaBox.Storing.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 637205848995434103L,
+                            Id = 637205961571597807L,
                             Address = "12345 Streat st, Arlington, Texas",
                             Name = "Dominos",
                             Password = "Password1",
@@ -191,7 +191,7 @@ namespace PizzaBox.Storing.Migrations
                         },
                         new
                         {
-                            Id = 637205848995435302L,
+                            Id = 637205961571598364L,
                             Address = "12346 Streat st, Arlington, Texas",
                             Name = "Papa Johns",
                             Password = "Password2",
@@ -222,43 +222,50 @@ namespace PizzaBox.Storing.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 637205848995425662L,
+                            Id = 637205961571594072L,
                             Name = "Mozzarella Cheese",
                             Price = 0.25m,
                             ToppingType = 0
                         },
                         new
                         {
-                            Id = 637205848995426255L,
+                            Id = 637205961571594386L,
                             Name = "Parmesan Cheese",
                             Price = 0.50m,
                             ToppingType = 0
                         },
                         new
                         {
-                            Id = 637205848995426332L,
+                            Id = 637205961571594408L,
                             Name = "Tomato Sauce",
                             Price = 0.25m,
                             ToppingType = 1
                         },
                         new
                         {
-                            Id = 637205848995426338L,
+                            Id = 637205961571594411L,
                             Name = "Pepperoni",
                             Price = 1.00m,
                             ToppingType = 2
                         },
                         new
                         {
-                            Id = 637205848995426350L,
+                            Id = 637205961571594414L,
                             Name = "Ham",
                             Price = 1.50m,
                             ToppingType = 2
                         },
                         new
                         {
-                            Id = 637205848995426361L,
+                            Id = 637205961571594417L,
                             Name = "Beef",
+                            Price = 1.50m,
+                            ToppingType = 2
+                        },
+                        new
+                        {
+                            Id = 637205961571594420L,
+                            Name = "Olive",
                             Price = 1.50m,
                             ToppingType = 2
                         });
@@ -285,7 +292,7 @@ namespace PizzaBox.Storing.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 637205848995430188L,
+                            Id = 637205961571595493L,
                             Name = "George",
                             Password = "Password12345",
                             Username = "George"
