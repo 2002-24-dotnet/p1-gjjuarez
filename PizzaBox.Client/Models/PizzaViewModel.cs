@@ -1,32 +1,44 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using PizzaBox.Domain.Abstracts;
+using PizzaBox.Domain.Interfaces;
 using PizzaBox.Domain.Models;
-using PizzaBox.Storage.Repositories;
+using PizzaBox.Storing.Repositories;
 
 namespace PizzaBox.Client.Models
 {
-  public class PizzaViewModel
-  {
-    private PizzaBoxRepository _pbr;
+   public class PizzaViewModel
+   {
+      private PizzeriaRepository _pbr = new PizzeriaRepository();
 
-    public PizzaViewModel(PizzaBoxRepository repository)
-    {
-      _pbr = repository;
-    }
+      public SelectList CrustList { get; set; }
+      public SelectList SizeList { get; set; }
+      public SelectList ToppingList { get; set; }
+      [Required]
+      public string Name { get; set; }
+      [Required]
+      public string CrustId { get; set; }
+      [Required]
+      public string SizeId { get; set; }
+      // public List<string> ToppingsId { get; set; }
 
-    public List<Crust> CrustList { get; set; }
-    public List<Size> SizeList { get; set; }
-    public List<Topping> ToppingList { get; set; }
+      public PizzaViewModel()
+      {
+         CrustList = SelectList<Crust>();
+         SizeList = SelectList<Size>();
+         // ToppingList = SelectList<Topping>();
+      }
 
-    public Crust Crust { get; set; }
-    public Size Size { get; set; }
-    public List<Topping> Toppings { get; set; }
-
-    public PizzaViewModel()
-    {
-      CrustList = _pbr.Read<Crust>().ToList();
-      SizeList = _pbr.Read<Size>().ToList();
-      ToppingList = _pbr.Read<Topping>().ToList();
-    }
-  }
+      private SelectList SelectList<T>() where T : APizzaComponent
+      {
+         return new SelectList(_pbr.Get<T>().Select(x =>
+                        new SelectListItem
+                        {
+                           Value = x.Id.ToString(),
+                           Text = x.Name
+                        }), "Value", "Text");
+      }
+   }
 }

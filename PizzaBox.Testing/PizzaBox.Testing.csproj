@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PizzaBox.Storage\PizzaBox.Storage.csproj" />
+    <ProjectReference Include="..\PizzaBox.Storing\PizzaBox.Storing.csproj" />
   </ItemGroup>
 
 </Project>

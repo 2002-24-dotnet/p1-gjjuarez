@@ -1,0 +1,28 @@
+@model PizzaBox.Client.Models.PizzaViewModel
+
+<form action="/user/orderpizza" method="post">
+  @Html.AntiForgeryToken()
+   
+   <label asp-for="Name">Name</label>
+   <input type="text" asp-for="Name">
+
+   <p>Crust: @Html.DropDownListFor(Model => Model.CrustId, Model.CrustList)</p>
+   <p>Size: @Html.DropDownListFor(Model => Model.SizeId, Model.SizeList)</p>
+
+  @* <select asp-for="Size">Size
+    @foreach (var item in @Model.SizeList)
+    {
+      <option value=item>@item.Name</option>
+    }
+  </select>
+
+  @foreach(var item in @Model.ToppingList)
+  {
+   <label class="container">@item.Name
+      <input type="checkbox">
+      <span class="checkmark"></span>
+   </label>
+  } *@
+
+  <button type="submit">Create</button>
+</form>
